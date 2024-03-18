@@ -15,11 +15,8 @@ const identity = {
   const finished = false;
   const goal = 3;
 
-{happy && <p>I am happy to be learning Astro!</p>}
 
-{finished && <p>I finished this tutorial!</p>}
 
-{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 
   
 ---
@@ -32,6 +29,15 @@ const identity = {
 		<meta name="generator" content={Astro.generator} />
         
 		<title>{pageTitle}</title>
+
+    <style>
+        h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+
+
+    </style>
         
 	</head>
 	<body>
@@ -55,5 +61,11 @@ const identity = {
         <ul>
           {skills.map((skill) => <li>{skill}</li>)}
         </ul>
+
+{happy && <p>I am happy to be learning Astro!</p>}
+
+{finished && <p>I finished this tutorial!</p>}
+
+{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
     </body>
 </html>
