@@ -1,5 +1,7 @@
 
 ---
+
+import '../styles/global.css'
 const pageTitle = "About Meee";
 
 const identity = {
@@ -9,16 +11,18 @@ const identity = {
     hobbies: ["photography", "birdwatching", "baseball"],
   };
   
-  const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"]; 
+  const skill = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"]; 
   
   const happy = true;
   const finished = false;
   const goal = 3;
 
 
+  const skillColor = "blue";
+  const fontWeight = "bold";
+  const textCase = "uppercase";
+  const fontSize = "20px" ;
 
-
-  
 ---
 
 <html lang="en">
@@ -30,13 +34,18 @@ const identity = {
         
 		<title>{pageTitle}</title>
 
-    <style>
-        h1 {
+    <style define:vars={{skillColor,textCase,fontSize,fontWeight}}>
+      h1 {
         color: purple;
         font-size: 4rem;
       }
-
-
+      .skill {
+        
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+        font-size: var(--fontSize);
+      }
     </style>
         
 	</head>
@@ -59,7 +68,7 @@ const identity = {
         </ul>
         <p>My skills are:</p>
         <ul>
-          {skills.map((skill) => <li>{skill}</li>)}
+          {skill.map((skill) => <li class= "skill">{skill}</li>)}
         </ul>
 
 {happy && <p>I am happy to be learning Astro!</p>}
